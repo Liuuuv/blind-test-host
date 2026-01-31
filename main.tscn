@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://bp6qixp2cr17r"]
+
+[ext_resource type="PackedScene" uid="uid://mk8gd413di6f" path="res://song_item.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b2ntg0qknfby4" path="res://public.tscn" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://be53k6v76wm47" path="res://icon.svg" id="2_1bvp3"]
+[ext_resource type="Shader" uid="uid://cbeuy3xnno1yg" path="res://Shaders/background.gdshader" id="2_7mycd"]
+[ext_resource type="PackedScene" uid="uid://pmk66guu87cu" path="res://teams.tscn" id="3_7mycd"]
+[ext_resource type="Texture2D" uid="uid://cgutd2sl81wxd" path="res://Sprites/Buttons/Play.png" id="3_lquwl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_272bh"]
+shader = ExtResource("2_7mycd")
+shader_parameter/stripes = 17.32
+shader_parameter/stripe_thickness = 1.705
+shader_parameter/speed = 0.135
+shader_parameter/stripe_color = Color(0.16661333, 0.0968, 0.22, 1)
+shader_parameter/background_color = Color(0.23100002, 0.1075, 0.25, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node2D" unique_id=48103454]
+
+[node name="Public" parent="." unique_id=2131825656 instance=ExtResource("1_lquwl")]
+visible = false
+
+[node name="Host" type="CanvasLayer" parent="." unique_id=1000907412]
+
+[node name="UI" type="Control" parent="Host" unique_id=549489567]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="Host/UI" unique_id=1329120882]
+material = SubResource("ShaderMaterial_272bh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13, 0.13, 0.13, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Host/UI" unique_id=792152219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Host/UI/HBoxContainer" unique_id=1228728330]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Host/UI/HBoxContainer/VBoxContainer2" unique_id=1606548043]
+layout_mode = 2
+text = "BLIND TEST HOST"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Host/UI/HBoxContainer/VBoxContainer2" unique_id=1846168517]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NextSongs" type="VBoxContainer" parent="Host/UI/HBoxContainer/VBoxContainer2/ScrollContainer" unique_id=1691093963]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SongItem" parent="Host/UI/HBoxContainer/VBoxContainer2/ScrollContainer/NextSongs" unique_id=48797371 instance=ExtResource("1_h2yge")]
+layout_mode = 2
+
+[node name="SongItem2" parent="Host/UI/HBoxContainer/VBoxContainer2/ScrollContainer/NextSongs" unique_id=281316368 instance=ExtResource("1_h2yge")]
+layout_mode = 2
+
+[node name="SongItem3" parent="Host/UI/HBoxContainer/VBoxContainer2/ScrollContainer/NextSongs" unique_id=1246593978 instance=ExtResource("1_h2yge")]
+layout_mode = 2
+
+[node name="SongItem4" parent="Host/UI/HBoxContainer/VBoxContainer2/ScrollContainer/NextSongs" unique_id=695514699 instance=ExtResource("1_h2yge")]
+layout_mode = 2
+
+[node name="SongItem5" parent="Host/UI/HBoxContainer/VBoxContainer2/ScrollContainer/NextSongs" unique_id=596239867 instance=ExtResource("1_h2yge")]
+layout_mode = 2
+
+[node name="SongItem6" parent="Host/UI/HBoxContainer/VBoxContainer2/ScrollContainer/NextSongs" unique_id=58418702 instance=ExtResource("1_h2yge")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Host/UI/HBoxContainer" unique_id=165512010]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Teams" parent="Host/UI/HBoxContainer/VBoxContainer" unique_id=1692338437 instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="SongInfos" type="Panel" parent="Host/UI/HBoxContainer/VBoxContainer" unique_id=1042874777]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7mycd")
+
+[node name="MarginContainer" type="MarginContainer" parent="Host/UI/HBoxContainer/VBoxContainer/SongInfos" unique_id=1031168979]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Host/UI/HBoxContainer/VBoxContainer/SongInfos/MarginContainer" unique_id=446993944]
+layout_mode = 2
+texture = ExtResource("2_1bvp3")
+
+[node name="SongPanel" type="VBoxContainer" parent="Host/UI/HBoxContainer/VBoxContainer" unique_id=554405623]
+layout_mode = 2
+
+[node name="SongName" type="Label" parent="Host/UI/HBoxContainer/VBoxContainer/SongPanel" unique_id=11151508]
+layout_mode = 2
+text = "SONG NAME"
+horizontal_alignment = 1
+
+[node name="Progress" type="HSlider" parent="Host/UI/HBoxContainer/VBoxContainer/SongPanel" unique_id=1291088643]
+layout_mode = 2
+
+[node name="SongControl" type="HBoxContainer" parent="Host/UI/HBoxContainer/VBoxContainer/SongPanel" unique_id=1629213229]
+layout_mode = 2
+
+[node name="PauseButton" type="TextureButton" parent="Host/UI/HBoxContainer/VBoxContainer/SongPanel/SongControl" unique_id=743961092]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture_normal = ExtResource("3_lquwl")

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://pmk66guu87cu"]
+
+[node name="Teams" type="HBoxContainer" unique_id=1692338437]
+
+[node name="Team" type="HBoxContainer" parent="." unique_id=498060964]
+layout_mode = 2
+
+[node name="TeamName" type="Label" parent="Team" unique_id=1104483124]
+layout_mode = 2
+text = "TEAM NAME"
+
+[node name="PointCount" type="Label" parent="Team" unique_id=267602341]
+layout_mode = 2
+text = "99"
+
+[node name="Team2" type="HBoxContainer" parent="." unique_id=899920201]
+layout_mode = 2
+
+[node name="TeamName" type="Label" parent="Team2" unique_id=505766167]
+layout_mode = 2
+text = "TEAM NAME"
+
+[node name="PointCount" type="Label" parent="Team2" unique_id=1882794475]
+layout_mode = 2
+text = "99"
+
+[node name="Team3" type="HBoxContainer" parent="." unique_id=1293608019]
+layout_mode = 2
+
+[node name="TeamName" type="Label" parent="Team3" unique_id=14985393]
+layout_mode = 2
+text = "TEAM NAME"
+
+[node name="PointCount" type="Label" parent="Team3" unique_id=1765764336]
+layout_mode = 2
+text = "99"
+
+[node name="Team4" type="HBoxContainer" parent="." unique_id=1649620082]
+layout_mode = 2
+
+[node name="TeamName" type="Label" parent="Team4" unique_id=1830407472]
+layout_mode = 2
+text = "TEAM NAME"
+
+[node name="PointCount" type="Label" parent="Team4" unique_id=2000370700]
+layout_mode = 2
+text = "99"
