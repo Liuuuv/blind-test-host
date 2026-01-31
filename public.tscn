@@ -44,10 +44,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/VBoxContainer" unique_id=1934984616]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer" unique_id=1033897871]
+layout_mode = 2
+alignment = 1
+
+[node name="Leader" type="Label" parent="UI/VBoxContainer/HBoxContainer" unique_id=1934984616]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Best of X"
+text = "Leader"
+
+[node name="Name" type="Label" parent="UI/VBoxContainer/HBoxContainer" unique_id=56224306]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "XXX"
 
 [node name="Teams" parent="UI/VBoxContainer" unique_id=1692338437 instance=ExtResource("1_wmshy")]
 layout_mode = 2
