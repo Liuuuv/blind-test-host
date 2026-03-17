@@ -61,15 +61,6 @@ func generate_new_id() -> String:
 	
 	return next_id
 
-func create_song_infos(id: String, infos: Dictionary, extension: String, video_id: String = "", thumbnail_path: String = ""):
-	
-	SongInfosManager.change_song_info(id, "display_name", infos.get("title", ""))
-	SongInfosManager.change_song_info(id, "extension", extension)
-	SongInfosManager.change_song_info(id, "video_id", video_id)
-	SongInfosManager.change_song_info(id, "thumbnail_path", thumbnail_path)
-	SongInfosManager.change_song_info(id, "release_date", infos.get("release_date", ""))
-	SongInfosManager.change_song_info(id, "artist", infos.get("channel", ""))
-	SongInfosManager.change_song_info(id, "artist_id", infos.get("channel_id", ""))
 
 
 

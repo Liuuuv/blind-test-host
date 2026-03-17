@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://la76yr7qqirh"]
+
+[ext_resource type="Script" uid="uid://dki3238lwnbb8" path="res://Scripts/song_info_line.gd" id="1_q4yd3"]
+
+[node name="Line" type="HBoxContainer" unique_id=1342086848]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_q4yd3")
+
+[node name="InfoNameLabel" type="Label" parent="." unique_id=220106347]
+layout_mode = 2
+text = "INFO NAME"
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=813998976]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_readonly_color = Color(0.88, 0.616, 0.616, 0.5019608)
+theme_override_colors/font_placeholder_color = Color(0.88, 0.88, 0.88, 0.09411765)
+theme_override_constants/line_spacing = -5
+placeholder_text = "whatsup"
+context_menu_enabled = false
+deselect_on_focus_loss_enabled = false
+caret_blink = true
