@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://mk8gd413di6f"]
 
+[ext_resource type="Script" uid="uid://i8dsjnhu7egc" path="res://Scripts/song_item.gd" id="1_50lua"]
 [ext_resource type="Texture2D" uid="uid://be53k6v76wm47" path="res://icon.svg" id="1_f8dde"]
 
 [node name="SongItem" type="Panel" unique_id=48797371]
@@ -9,6 +10,7 @@ anchor_right = 0.17400001
 anchor_bottom = 0.093
 offset_right = -0.4480133
 offset_bottom = -0.26399994
+script = ExtResource("1_50lua")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=28812434]
 layout_mode = 1
@@ -22,23 +24,30 @@ offset_right = -3.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="ThumbnailContainer" type="PanelContainer" parent="HBoxContainer" unique_id=501625087]
 layout_mode = 2
+mouse_filter = 2
 
-[node name="ThumbNail" type="TextureRect" parent="HBoxContainer/ThumbnailContainer" unique_id=1388488303]
+[node name="Thumbnail" type="TextureRect" parent="HBoxContainer/ThumbnailContainer" unique_id=1388488303]
+unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_f8dde")
 expand_mode = 3
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=712416811]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="SongName" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1539031874]
+unique_name_in_owner = true
 layout_mode = 2
 text = "SONG NAME"
 
 [node name="Artist" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1329311814]
+unique_name_in_owner = true
 layout_mode = 2
 text = "ARTIST"
