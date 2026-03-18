@@ -28,7 +28,9 @@ func start_song(full_path: String):
 	var id: String = full_path.get_file().get_basename()
 	var song_infos = SongInfosManager.song_infos.get(id)
 	if song_infos:
-		Global.song_panel.song_label.text = song_infos.get("name", "[i]Untitled[/i]")
+		Global.song_panel.song_label.text = song_infos.get("display_name", "NO_NAME_GIVEN")
+	
+	
 
 func pause_song() -> void:
 	print("pausing song")
@@ -57,6 +59,7 @@ func play_from_index(index: int) -> void:
 		if extension:
 			var full_path = Global.get_downloads_path() + id + "." + extension
 			start_song(full_path)
+			SignalManager.starting_song.emit(id)
 		else:
 			push_error("no extension available for index ", index)
 			return
@@ -72,7 +75,7 @@ func add_song_from_file(path: String):
 	var song_name: String = path.get_file().get_basename()
 	
 	var infos = {"title": song_name}
-	Global.create_song_infos(id, infos, extension)
+	SongInfosManager.create_song_infos(id, infos, extension)
 	SignalManager.downloads_folder_changed.emit()
 
 

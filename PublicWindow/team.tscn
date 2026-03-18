@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://du1o0dpcdhgdw"]
+
+[node name="Team" type="HBoxContainer" unique_id=323608448]
+
+[node name="TeamName" type="Label" parent="." unique_id=1843349375]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "TEAM NAME"
+
+[node name="PointCount" type="Label" parent="." unique_id=870556707]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "99"

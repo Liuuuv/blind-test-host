@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cuxuxc4c61lrm"]
+
+[ext_resource type="Texture2D" uid="uid://c8qgksednffg1" path="res://Sprites/Buttons/PlusOne.png" id="1_mwxqe"]
+[ext_resource type="Texture2D" uid="uid://cprsj65oxksnb" path="res://Sprites/Buttons/MinusOne.png" id="2_qvgtb"]
+
+[node name="TeamControl" type="HBoxContainer" unique_id=1178251668]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 33.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="TeamName" type="Label" parent="." unique_id=508281140]
+layout_mode = 2
+text = "TEAM"
+
+[node name="AddPoint" type="Button" parent="." unique_id=1510714360]
+layout_mode = 2
+size_flags_horizontal = 10
+icon = ExtResource("1_mwxqe")
+
+[node name="RemovePoint" type="Button" parent="." unique_id=1497911088]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.0
+icon = ExtResource("2_qvgtb")

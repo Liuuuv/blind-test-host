@@ -18,7 +18,7 @@ func get_all_ids_from_dir() -> Array[String]:
 				continue
 			if not dir.current_is_dir():
 				var extension = file_name.get_extension()
-				if extension in ["mp3", "wav"]: ## TEMP
+				if extension in Global.supported_extensions: ## TEMP
 					ids.append(id)
 					
 			file_name = dir.get_next()

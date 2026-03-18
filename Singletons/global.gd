@@ -7,6 +7,7 @@ const DOWNLOADED_SONGS_PATH: String = "res://downloaded_songs.json"
 const LOGS_PATH: String = "res://logs.json"
 const CACHE_DIR_NAME: String = "_cache" ## in downloads
 const default_downloads_path: String = "res://downloads/"
+const supported_extensions = ["mp3", "wav"]
 #const song_item_scene = preload("res://Misc/song_item.tscn")
 #const download_item_scene = preload("res://Misc/download_item.tscn")
 
@@ -16,6 +17,7 @@ var select_song_dialog: SelectSongDialog
 var current_playlist: CurrentPlaylist
 var music_player: MusicPlayer
 var song_panel: SongPanel
+var song_infos_container: SongInfosContainer
 
 var downloaded_songs: Dictionary = {}
 

@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://broxkx3vla1ae" path="res://PublicWindow/public.gd" id="1_4x2nv"]
 [ext_resource type="Shader" uid="uid://cbeuy3xnno1yg" path="res://Shaders/background.gdshader" id="1_g7cm7"]
-[ext_resource type="PackedScene" uid="uid://pmk66guu87cu" path="res://Scenes/teams.tscn" id="1_wmshy"]
 [ext_resource type="Texture2D" uid="uid://be53k6v76wm47" path="res://icon.svg" id="2_g7cm7"]
+[ext_resource type="PackedScene" uid="uid://du1o0dpcdhgdw" path="res://PublicWindow/team.tscn" id="3_sh3uy"]
+[ext_resource type="Texture2D" uid="uid://6jsuf7haryr1" path="res://Sprites/HiddenThumbnail.png" id="5_5jdyu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4x2nv"]
 shader = ExtResource("1_g7cm7")
@@ -53,42 +54,94 @@ alignment = 1
 [node name="Leader" type="Label" parent="UI/VBoxContainer/HBoxContainer" unique_id=1934984616]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
 text = "Leader"
 
-[node name="Name" type="Label" parent="UI/VBoxContainer/HBoxContainer" unique_id=56224306]
+[node name="LeaderNameLabel" type="Label" parent="UI/VBoxContainer/HBoxContainer" unique_id=56224306]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
 text = "XXX"
 
-[node name="Teams" parent="UI/VBoxContainer" unique_id=1692338437 instance=ExtResource("1_wmshy")]
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/VBoxContainer" unique_id=658764185]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+alignment = 1
+
+[node name="Team" parent="UI/VBoxContainer/HBoxContainer2" unique_id=323608448 instance=ExtResource("3_sh3uy")]
+layout_mode = 2
+
+[node name="Team2" parent="UI/VBoxContainer/HBoxContainer2" unique_id=773071690 instance=ExtResource("3_sh3uy")]
+layout_mode = 2
 
 [node name="ThumbnailContainer" type="PanelContainer" parent="UI/VBoxContainer" unique_id=574348181]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ThumbNail" type="TextureRect" parent="UI/VBoxContainer/ThumbnailContainer" unique_id=1741862692]
+[node name="Thumbnail" type="TextureRect" parent="UI/VBoxContainer/ThumbnailContainer" unique_id=1741862692]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_g7cm7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HiddenThumbnail" type="TextureRect" parent="UI/VBoxContainer/ThumbnailContainer" unique_id=483788382]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_5jdyu")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/VBoxContainer" unique_id=1026597400]
 layout_mode = 2
 
-[node name="Provenance" type="Label" parent="UI/VBoxContainer/VBoxContainer" unique_id=421334597]
+[node name="Source" type="HBoxContainer" parent="UI/VBoxContainer/VBoxContainer" unique_id=718043673]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "ANIME"
 
-[node name="SongName" type="Label" parent="UI/VBoxContainer/VBoxContainer" unique_id=1451638750]
+[node name="Label" type="Label" parent="UI/VBoxContainer/VBoxContainer/Source" unique_id=421334597]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Show: "
+
+[node name="Source" type="Label" parent="UI/VBoxContainer/VBoxContainer/Source" unique_id=1104529171]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "SHOW"
+
+[node name="SongName" type="HBoxContainer" parent="UI/VBoxContainer/VBoxContainer" unique_id=52295482]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="UI/VBoxContainer/VBoxContainer/SongName" unique_id=1024222677]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Musique: "
+
+[node name="SongName" type="Label" parent="UI/VBoxContainer/VBoxContainer/SongName" unique_id=322407599]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
 text = "SONGNAME"
 
-[node name="Artist" type="Label" parent="UI/VBoxContainer/VBoxContainer" unique_id=73359608]
+[node name="Artist" type="HBoxContainer" parent="UI/VBoxContainer/VBoxContainer" unique_id=1900444390]
 layout_mode = 2
 size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="UI/VBoxContainer/VBoxContainer/Artist" unique_id=1489669252]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Artiste: "
+
+[node name="Artist" type="Label" parent="UI/VBoxContainer/VBoxContainer/Artist" unique_id=932476582]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
 text = "ARTIST"

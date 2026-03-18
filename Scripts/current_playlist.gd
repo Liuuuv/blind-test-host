@@ -6,6 +6,10 @@ var content_ids: Array[String] = []
 func _ready() -> void:
 	Global.current_playlist = self
 	initialize.call_deferred()
+	
+	SignalManager.downloads_folder_changed.connect(_on_downloads_folder_changed)
+
+
 
 func initialize():
 	initialize_content_ids()
@@ -16,6 +20,8 @@ func initialize_content_ids():
 	content_ids = all_ids ## TEMP
 
 func reload_song_items() -> void:
+	initialize_content_ids() ## TEMP
+	
 	for child in get_children():
 		child.queue_free()
 	
@@ -31,3 +37,7 @@ func clear_song_items() -> void:
 		child.queue_free()
 	
 	content_ids = []
+
+
+func _on_downloads_folder_changed():
+	Global.current_playlist.reload_song_items()

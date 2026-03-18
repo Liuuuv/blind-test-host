@@ -73,6 +73,7 @@ func initialize_context_menu():
 
 func _show_infos() -> void:
 	print("show infos")
+	Global.song_infos_container.load_song_info(id)
 
 func _delete() -> void:
 	Global.delete_song(id)
